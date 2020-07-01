@@ -11,7 +11,7 @@ from tkinter import messagebox
 import numpy as np
 print(dir(sklearn))
 
-from sklearn import model_specication,  neighbors
+from sklearn import model_selection,  neighbors
 import pandas as pd
 
 class breast_cancer():
@@ -146,7 +146,7 @@ df.drop(['id'], 1, inplace=True)
 
 X = np.array(df.drop(['class'], 1))
 y = np.array(df['class'])
-X_train, X_test, y_train, y_test = model_specification.train_test_split(X, y, test_size=0.2)
+X_train, X_test, y_train, y_test = model_selection.train_test_split(X, y, test_size=0.2)
 clf = neighbors.KNeighborsClassifier()
 clf.fit(X_train, y_train)
 accuracy = clf.score(X_test, y_test)
